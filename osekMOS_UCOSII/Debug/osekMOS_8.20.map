@@ -1,0 +1,1409 @@
+******************************************************************************
+               TMS320C6x Linker PC v7.2.1                      
+******************************************************************************
+>> Linked Wed Oct 23 09:05:43 2013
+
+OUTPUT FILE NAME:   <osekMOS_8.20.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 80019d40
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  L2_SHARED             00800000   00080000  000401e4  0003fe1c  RWIX
+  MSMC_SHARED           0c000000   00400000  00000000  00400000  RWIX
+  CORE0_L2SRAM          10800000   00080000  00000000  00080000  RWIX
+  CORE1_L2SRAM          11800000   00080000  00000000  00080000  RWIX
+  CORE2_L2SRAM          12800000   00080000  00000000  00080000  RWIX
+  CORE3_L2SRAM          13800000   00080000  00000000  00080000  RWIX
+  CORE4_L2SRAM          14800000   00080000  00000000  00080000  RWIX
+  CORE5_L2SRAM          15800000   00080000  00000000  00080000  RWIX
+  CORE6_L2SRAM          16800000   00080000  00000000  00080000  RWIX
+  CORE7_L2SRAM          17800000   00080000  00000000  00080000  RWIX
+  DDR_SHARED            80000000   20000000  0002f2e4  1ffd0d1c  RWIX
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00800000    00800000    00040120   00000000    rw-
+  00800000    00800000    00040000   00000000    rw- .stack
+  00840000    00840000    00000120   00000000    rw- .cio
+00840120    00840120    000000c4   000000c4    r--
+  00840120    00840120    000000c4   000000c4    r-- .switch
+80000000    80000000    0001a8c0   0001a8c0    r-x
+  80000000    80000000    0001a8c0   0001a8c0    r-x .text
+8001a8c0    8001a8c0    00013440   00000000    rw-
+  8001a8c0    8001a8c0    0000b440   00000000    rw- .far
+  80025d00    80025d00    00008000   00000000    rw- .sysmem
+8002dd00    8002dd00    00000858   00000858    r--
+  8002dd00    8002dd00    00000858   00000858    r-- .const
+8002e560    8002e560    000007be   000007be    rw-
+  8002e560    8002e560    00000798   00000798    rw- .fardata
+  8002ecf8    8002ecf8    00000026   00000026    rw- .neardata
+8002ed20    8002ed20    00000048   00000000    rw-
+  8002ed20    8002ed20    00000048   00000000    rw- .bss
+8002f000    8002f000    00000584   00000584    r-x
+  8002f000    8002f000    00000200   00000200    r-x .text:vecs
+  8002f200    8002f200    00000384   00000384    r-- .cinit
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.stack     0    00800000    00040000     UNINITIALIZED
+                  00800000    00000008     rts6600_elf.lib : boot.obj (.stack)
+                  00800008    0003fff8     --HOLE--
+
+.cio       0    00840000    00000120     UNINITIALIZED
+                  00840000    00000120     rts6600_elf.lib : trgmsg.obj (.cio)
+
+.switch    0    00840120    000000c4     
+                  00840120    00000054     c66xx_mpu.obj (.switch:BSP_GetSizeFromSeg)
+                  00840174    00000040     c66xx_mpu.obj (.switch:BSP_SetMemAreaNewPerm)
+                  008401b4    00000010     OS_FLAG.obj (.switch:OSFlagAccept)
+                  008401c4    00000010     OS_FLAG.obj (.switch:OSFlagPend)
+                  008401d4    00000010     OS_FLAG.obj (.switch:OSFlagPost)
+
+.text      0    80000000    0001a8c0     
+                  80000000    000032a0     c66xx_mpu.obj (.text)
+                  800032a0    00001680     osekMTask.obj (.text)
+                  80004920    00001440     osekMRpcKernel.obj (.text)
+                  80005d60    00000ee0     OS_FLAG.obj (.text)
+                  80006c40    00000ee0     osekMAlarm.obj (.text)
+                  80007b20    00000e20     c66xx_cic.obj (.text)
+                  80008940    00000d80     OS_CORE.obj (.text)
+                  800096c0    00000ce0     OS_TASK.obj (.text)
+                  8000a3a0    00000b20     OS_MUTEX.obj (.text)
+                  8000aec0    00000b00     c66xx_itbl.obj (.text)
+                  8000b9c0    00000a60     OS_Q.obj (.text)
+                  8000c420    00000a20     rb_tree.obj (.text)
+                  8000ce40    000008c0     c66xx_corepac.obj (.text)
+                  8000d700    00000800     osekMEvent.obj (.text)
+                  8000df00    000007a0     c66xx_ipc.obj (.text)
+                  8000e6a0    000005e0     rts6600_elf.lib : divd.obj (.text:__c6xabi_divd)
+                  8000ec80    000005c0     OS_MBOX.obj (.text)
+                  8000f240    000005c0     rts6600_elf.lib : _printfi.obj (.text:_getarg_diouxp)
+                  8000f800    00000540     osekMCounter.obj (.text)
+                  8000fd40    000004c0     OS_SEM.obj (.text)
+                  80010200    000004c0     c66xx_exception.obj (.text)
+                  800106c0    000004a0     rts6600_elf.lib : _printfi.obj (.text:_setfield)
+                  80010b60    00000480                     : _printfi.obj (.text:_printfi)
+                  80010fe0    00000480     c66xx_timer.obj (.text)
+                  80011460    00000440     os_cpu_c.obj (.text)
+                  800118a0    00000420     osekMRpcFunc.obj (.text)
+                  80011cc0    00000400     OS_MEM.obj (.text)
+                  800120c0    000003a0     osekMSpinlock.obj (.text)
+                  80012460    00000380     osekMExecution.obj (.text)
+                  800127e0    00000340     c6678_cache.obj (.text)
+                  80012b20    00000320     OS_TIME.obj (.text)
+                  80012e40    00000320     osekMInterrupt.obj (.text)
+                  80013160    00000300     rts6600_elf.lib : fputs.obj (.text:fputs)
+                  80013460    00000300     oskmain.obj (.text)
+                  80013760    000002e0     rts6600_elf.lib : _printfi.obj (.text:_pproc_fwp)
+                  80013a40    000002e0                     : memory.obj (.text:realloc)
+                  80013d20    000002c0                     : _printfi.obj (.text:_pproc_fge)
+                  80013fe0    000002c0     c66xx_memarea.obj (.text)
+                  800142a0    000002a0     rts6600_elf.lib : _printfi.obj (.text:fcvt)
+                  80014540    00000280                     : _printfi.obj (.text:ecvt)
+                  800147c0    00000280                     : memory.obj (.text:free)
+                  80014a40    00000260                     : memory.obj (.text:memalign)
+                  80014ca0    00000240                     : imath64.obj (.text:__c6xabi_divull)
+                  80014ee0    00000240                     : _printfi.obj (.text:_pconv_e)
+                  80015120    00000220                     : _printfi.obj (.text:_pproc_diouxp)
+                  80015340    00000220                     : _printfi.obj (.text:_pproc_str)
+                  80015560    00000220     os_cpu_a.obj (.text)
+                  80015780    00000200     rts6600_elf.lib : _printfi.obj (.text:_pconv_g)
+                  80015980    00000200     c66xx_spinlock.obj (.text)
+                  80015b80    00000200     ucmain.obj (.text)
+                  80015d80    000001c0     rts6600_elf.lib : _printfi.obj (.text:_mcpy)
+                  80015f40    000001c0                     : fopen.obj (.text:_openfile)
+                  80016100    000001c0     osekMTarget.obj (.text)
+                  800162c0    000001a0     rts6600_elf.lib : trgdrv.obj (.text:HOSTrename)
+                  80016460    000001a0                     : imath40.obj (.text:__c6xabi_divul)
+                  80016600    000001a0                     : lowlev.obj (.text:add_device)
+                  800167a0    000001a0                     : memory.obj (.text:malloc)
+                  80016940    000001a0                     : setvbuf.obj (.text:setvbuf)
+                  80016ae0    00000180                     : copy_decompress_rle.obj (.text:__TI_decompress_rle_core)
+                  80016c60    00000180                     : autoinit.obj (.text:_auto_init_elf)
+                  80016de0    00000180     c66xx_msmc.obj (.text)
+                  80016f60    00000180     c66xx_regs.obj (.text)
+                  800170e0    00000180     rts6600_elf.lib : lowlev.obj (.text:open)
+                  80017260    00000160                     : frcmpyd_div.obj (.text:__c6xabi_frcmpyd_div)
+                  800173c0    00000140                     : _printfi.obj (.text:_pproc_fflags)
+                  80017500    00000140                     : fputc.obj (.text:fputc)
+                  80017640    00000140                     : lowlev.obj (.text:getdevice)
+                  80017780    00000120                     : imath64.obj (.text:__c6xabi_divlli)
+                  800178a0    00000120                     : _printfi.obj (.text:_ltostr)
+                  800179c0    00000120                     : fopen.obj (.text:_search_fp)
+                  80017ae0    00000120     c66xx_init.obj (.text)
+                  80017c00    00000120     rts6600_elf.lib : fclose.obj (.text:fclose)
+                  80017d20    00000120     osekMKernel.obj (.text)
+                  80017e40    00000100     rts6600_elf.lib : trgdrv.obj (.text:HOSTlseek)
+                  80017f40    00000100                     : _io_perm.obj (.text:_wrt_ok)
+                  80018040    00000100                     : cpy_tbl.obj (.text:copy_in)
+                  80018140    00000100                     : fflush.obj (.text:fflush)
+                  80018240    00000100                     : trgdrv.obj (.text:getenv)
+                  80018340    000000e0                     : trgdrv.obj (.text:HOSTopen)
+                  80018420    000000e0                     : strasg.obj (.text:__strasgi)
+                  80018500    000000e0                     : _printfi.obj (.text:_div)
+                  800185e0    000000e0                     : atoi.obj (.text:atoi)
+                  800186c0    000000e0     c66xx_rpc.obj (.text)
+                  800187a0    000000e0     rts6600_elf.lib : lowlev.obj (.text:close)
+                  80018880    000000e0                     : copy_zero_init.obj (.text:decompress:ZI:__TI_zero_init)
+                  80018960    000000e0                     : exit.obj (.text:exit)
+                  80018a40    000000c0                     : trgdrv.obj (.text:HOSTread)
+                  80018b00    000000c0                     : trgdrv.obj (.text:HOSTunlink)
+                  80018bc0    000000c0                     : trgdrv.obj (.text:HOSTwrite)
+                  80018c80    000000c0                     : divu.obj (.text:__divu)
+                  80018d40    000000c0                     : fopen.obj (.text:_cleanup)
+                  80018e00    000000c0                     : fflush.obj (.text:_doflush)
+                  80018ec0    000000c0                     : _io_perm.obj (.text:_rd_ok)
+                  80018f80    000000c0                     : fseek.obj (.text:fseek)
+                  80019040    000000c0                     : lowlev.obj (.text:lseek)
+                  80019100    000000c0                     : ltoa.obj (.text:ltoa)
+                  800191c0    000000c0                     : lowlev.obj (.text:read)
+                  80019280    000000c0                     : lowlev.obj (.text:rename)
+                  80019340    000000c0                     : lowlev.obj (.text:write)
+                  80019400    000000a0                     : trgdrv.obj (.text:HOSTclock)
+                  800194a0    000000a0                     : trgdrv.obj (.text:HOSTclose)
+                  80019540    000000a0                     : trgdrv.obj (.text:HOSTtime)
+                  800195e0    000000a0                     : imath40.obj (.text:__c6xabi_divli)
+                  80019680    000000a0                     : strasg.obj (.text:__strasg)
+                  80019720    000000a0                     : _printfi.obj (.text:_ecpy)
+                  800197c0    000000a0                     : _printfi.obj (.text:_fcpy)
+                  80019860    000000a0                     : _printfi.obj (.text:_pconv_f)
+                  80019900    000000a0                     : lowlev.obj (.text:finddevice)
+                  800199a0    000000a0                     : memory.obj (.text:minsert)
+                  80019a40    000000a0                     : memory.obj (.text:mremove)
+                  80019ae0    000000a0                     : lowlev.obj (.text:remove_device)
+                  80019b80    000000a0     string.obj (.text)
+                  80019c20    000000a0     rts6600_elf.lib : lowlev.obj (.text:tabinit)
+                  80019cc0    00000080                     : llshift.obj (.text:__c6xabi_llshl)
+                  80019d40    00000080                     : boot.obj (.text:_c_int00)
+                  80019dc0    00000080                     : memory.obj (.text:_minit)
+                  80019e40    00000080                     : memory.obj (.text:calloc)
+                  80019ec0    00000080     ex_test.obj (.text)
+                  80019f40    00000080     rts6600_elf.lib : fopen.obj (.text:freopen)
+                  80019fc0    00000080                     : printf.obj (.text:printf)
+                  8001a040    00000080                     : trgmsg.obj (.text:readmsg)
+                  8001a0c0    00000080                     : lowlev.obj (.text:unlink)
+                  8001a140    00000060                     : llshift.obj (.text:__c6xabi_llshr)
+                  8001a1a0    00000060                     : llshift.obj (.text:__c6xabi_llshru)
+                  8001a200    00000060                     : imath64.obj (.text:__c6xabi_remlli)
+                  8001a260    00000060                     : imath64.obj (.text:__c6xabi_remull)
+                  8001a2c0    00000060                     : imath64.obj (.text:_subcull)
+                  8001a320    00000060                     : fopen.obj (.text:fopen)
+                  8001a380    00000060                     : memccpy.obj (.text:memccpy)
+                  8001a3e0    00000060                     : trgmsg.obj (.text:writemsg)
+                  8001a440    00000040                     : isinf.obj (.text:__c6xabi_isinf)
+                  8001a480    00000040                     : _printfi.obj (.text:__c6xabi_isnan)
+                  8001a4c0    00000040                     : divd.obj (.text:__c6xabi_isnan)
+                  8001a500    00000040                     : imath40.obj (.text:__c6xabi_remli)
+                  8001a540    00000040                     : imath40.obj (.text:__c6xabi_remul)
+                  8001a580    00000040                     : strasg.obj (.text:__strasgi_64plus)
+                  8001a5c0    00000040                     : args_main.obj (.text:_args_main)
+                  8001a600    00000040                     : abs.obj (.text:llabs)
+                  8001a640    00000040     osekMHook.obj (.text)
+                  8001a680    00000040     rts6600_elf.lib : fputs.obj (.text:puts)
+                  8001a6c0    00000020                     : negll.obj (.text:__c6xabi_negll)
+                  8001a6e0    00000020                     : tdeh_init.obj (.text:__tdeh_init)
+                  8001a700    00000020                     : _lock.obj (.text:_nop)
+                  8001a720    00000020                     : printf.obj (.text:_outc)
+                  8001a740    00000020                     : printf.obj (.text:_outs)
+                  8001a760    00000020                     : _lock.obj (.text:_register_lock)
+                  8001a780    00000020                     : _lock.obj (.text:_register_unlock)
+                  8001a7a0    00000020                     : exit.obj (.text:abort)
+                  8001a7c0    00000020                     : abs.obj (.text:abs)
+                  8001a7e0    00000020     c66xx_vectors.obj (.text)
+                  8001a800    00000020     rts6600_elf.lib : copy_decompress_none.obj (.text:decompress:none:__TI_decompress_none)
+                  8001a820    00000020                     : copy_decompress_rle.obj (.text:decompress:rle24:__TI_decompress_rle24)
+                  8001a840    00000020                     : copy_decompress_rle.obj (.text:decompress:rle:__TI_decompress_rle)
+                  8001a860    00000020                     : lowlev.obj (.text:find_registered_device)
+                  8001a880    00000020                     : abs.obj (.text:labs)
+                  8001a8a0    00000020                     : fputc.obj (.text:putchar)
+
+.far       0    8001a8c0    0000b440     UNINITIALIZED
+                  8001a8c0    00004000     osekMInterrupt.obj (.far)
+                  8001e8c0    00003750     cfg.obj (.far)
+                  80022010    00001800     ucmain.obj (.far)
+                  80023810    00001400     OS_CORE.obj (.far)
+                  80024c10    00000a10     c66xx_mpu.obj (.far)
+                  80025620    000001e0     c66xx_timer.obj (.far)
+                  80025800    00000140     osekMKernel.obj (.far)
+                  80025940    000000d8     rts6600_elf.lib : trgdrv.obj (.far)
+                  80025a18    00000008     --HOLE--
+                  80025a20    000000a0     c66xx_ipc.obj (.far)
+                  80025ac0    000000a0     rts6600_elf.lib : defs.obj (.far)
+                  80025b60    00000088     c66xx_cic.obj (.far)
+                  80025be8    00000008     --HOLE--
+                  80025bf0    00000080     c66xx_corepac.obj (.far)
+                  80025c70    00000040     c66xx_rpc.obj (.far)
+                  80025cb0    0000003c     c6678_cache.obj (.far)
+                  80025cec    00000004     --HOLE--
+                  80025cf0    00000010     c66xx_exception.obj (.far)
+
+.sysmem    0    80025d00    00008000     UNINITIALIZED
+                  80025d00    00000008     rts6600_elf.lib : memory.obj (.sysmem)
+                  80025d08    00007ff8     --HOLE--
+
+.const     0    8002dd00    00000858     
+                  8002dd00    00000108     c66xx_corepac.obj (.const:.string)
+                  8002de08    00000008     c66xx_mpu.obj (.const)
+                  8002de10    00000101     rts6600_elf.lib : ctype.obj (.const:_ctypes_)
+                  8002df11    00000002                     : fputs.obj (.const:.string)
+                  8002df13    0000000d     --HOLE-- [fill = 0]
+                  8002df20    00000100     OS_CORE.obj (.const:OSUnMapTbl)
+                  8002e020    000000f8     oskmain.obj (.const:.string)
+                  8002e118    000000ac     ucmain.obj (.const:.string)
+                  8002e1c4    00000094     c66xx_ipc.obj (.const:.string)
+                  8002e258    00000078     c66xx_init.obj (.const:.string)
+                  8002e2d0    00000070     osekMRpcKernel.obj (.const:.string)
+                  8002e340    00000068     c66xx_cic.obj (.const:.string)
+                  8002e3a8    00000064     c66xx_timer.obj (.const:.string)
+                  8002e40c    00000064     osekMRpcFunc.obj (.const:.string)
+                  8002e470    00000038     osekMExecution.obj (.const:.string)
+                  8002e4a8    00000034     c66xx_exception.obj (.const:.string)
+                  8002e4dc    00000028     osekMTask.obj (.const:.string)
+                  8002e504    00000023     rts6600_elf.lib : _printfi.obj (.const:.string)
+                  8002e527    00000001     --HOLE-- [fill = 0]
+                  8002e528    00000014     c66xx_spinlock.obj (.const:.string)
+                  8002e53c    00000004     --HOLE-- [fill = 0]
+                  8002e540    00000008     OS_CORE.obj (.const:OSMapTbl)
+                  8002e548    00000008     --HOLE-- [fill = 0]
+                  8002e550    00000008     rts6600_elf.lib : divd.obj (.const:initial_approx$1)
+
+.fardata   0    8002e560    00000798     
+                  8002e560    00000100     cfg.obj (.fardata:osekConfig_InterruptEntryTable)
+                  8002e660    00000100     osekMTask.obj (.fardata:osekTask_PriorityIndexTable)
+                  8002e760    000000f0     rts6600_elf.lib : defs.obj (.fardata:_ftable)
+                  8002e850    00000078                     : lowlev.obj (.fardata:_device)
+                  8002e8c8    00000008                     : _lock.obj (.fardata)
+                  8002e8d0    00000070     cfg.obj (.fardata:osekKernel_coreTasks)
+                  8002e940    00000060     cfg.obj (.fardata:coreRpcFunc)
+                  8002e9a0    00000050     rts6600_elf.lib : lowlev.obj (.fardata:_stream)
+                  8002e9f0    00000050     cfg.obj (.fardata:core0_taskConfig_table)
+                  8002ea40    00000050     cfg.obj (.fardata:core3_taskConfig_table)
+                  8002ea90    00000040     cfg.obj (.fardata:osekConfig_InterruptTypeTable)
+                  8002ead0    0000003c     cfg.obj (.fardata:core1_taskConfig_table)
+                  8002eb0c    00000004     rts6600_elf.lib : defs.obj (.fardata)
+                  8002eb10    0000003c     cfg.obj (.fardata:core2_taskConfig_table)
+                  8002eb4c    00000004     rts6600_elf.lib : fopen.obj (.fardata)
+                  8002eb50    00000030     cfg.obj (.fardata:osekKernel_coreAlarms)
+                  8002eb80    00000030     cfg.obj (.fardata:osekKernel_coreCounters)
+                  8002ebb0    00000028     cfg.obj (.fardata:osekTask_tasksMap)
+                  8002ebd8    00000024     c66xx_corepac.obj (.fardata)
+                  8002ebfc    00000004     rts6600_elf.lib : lowlev.obj (.fardata)
+                  8002ec00    00000018     cfg.obj (.fardata:core0_almControl_table)
+                  8002ec18    00000008     --HOLE--
+                  8002ec20    00000018     cfg.obj (.fardata:core0_counterCfg_table)
+                  8002ec38    00000008     --HOLE--
+                  8002ec40    00000018     cfg.obj (.fardata:core1_almControl_table)
+                  8002ec58    00000008     --HOLE--
+                  8002ec60    00000018     cfg.obj (.fardata:core3_almControl_table)
+                  8002ec78    00000008     --HOLE--
+                  8002ec80    00000018     cfg.obj (.fardata:osekAlarm_alarmsMap)
+                  8002ec98    00000008     --HOLE--
+                  8002eca0    00000013     cfg.obj (.fardata:coreSpinlocks)
+                  8002ecb3    00000001     --HOLE--
+                  8002ecb4    0000000c     rts6600_elf.lib : exit.obj (.fardata)
+                  8002ecc0    0000000c     cfg.obj (.fardata:core1_counterCfg_table)
+                  8002eccc    00000004     --HOLE--
+                  8002ecd0    0000000c     cfg.obj (.fardata:core2_counterCfg_table)
+                  8002ecdc    00000004     --HOLE--
+                  8002ece0    0000000c     cfg.obj (.fardata:core3_counterCfg_table)
+                  8002ecec    0000000c     rts6600_elf.lib : memory.obj (.fardata)
+
+.neardata 
+*          0    8002ecf8    00000026     
+                  8002ecf8    0000000c     oskmain.obj (.neardata)
+                  8002ed04    00000009     osekMHook.obj (.neardata)
+                  8002ed0d    00000003     --HOLE--
+                  8002ed10    00000004     c66xx_ipc.obj (.neardata)
+                  8002ed14    00000004     c66xx_msmc.obj (.neardata)
+                  8002ed18    00000003     osekMExecution.obj (.neardata)
+                  8002ed1b    00000001     --HOLE--
+                  8002ed1c    00000002     c66xx_mpu.obj (.neardata)
+
+.rodata    0    8002ed1e    00000000     UNINITIALIZED
+
+.bss       0    8002ed20    00000048     UNINITIALIZED
+                  8002ed20    00000044     OS_CORE.obj (.bss)
+                  8002ed64    00000004     os_cpu_c.obj (.bss)
+
+.text:vecs 
+*          0    8002f000    00000200     
+                  8002f000    00000200     c66xx_vectors.obj (.text:vecs)
+
+.cinit     0    8002f200    00000384     
+                  8002f200    00000335     (.cinit..fardata.load) [load image, compression = rle]
+                  8002f535    00000003     --HOLE-- [fill = 0]
+                  8002f538    0000000f     (.cinit..neardata.load) [load image, compression = rle]
+                  8002f547    00000001     --HOLE-- [fill = 0]
+                  8002f548    0000000c     (__TI_handler_table)
+                  8002f554    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  8002f55c    00000008     (.cinit..far.load) [load image, compression = zero_init]
+                  8002f564    00000020     (__TI_cinit_table)
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 8002f564 records: 4, size/record: 8, table size: 32
+	.fardata: load addr=8002f200, load size=00000335 bytes, run addr=8002e560, run size=00000798 bytes, compression=rle
+	.neardata: load addr=8002f538, load size=0000000f bytes, run addr=8002ecf8, run size=00000026 bytes, compression=rle
+	.bss: load addr=8002f554, load size=00000008 bytes, run addr=8002ed20, run size=00000048 bytes, compression=zero_init
+	.far: load addr=8002f55c, load size=00000008 bytes, run addr=8001a8c0, run size=0000b440 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 8002f548 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_zero_init
+	index: 1, handler: __TI_decompress_rle24
+	index: 2, handler: __TI_decompress_none
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+800112ac   AckTimerInt
+80003b18   ActivateTask
+800102d4   BSP_AckDspInterrupt
+8000e42c   BSP_AckIpc
+80016e68   BSP_AllocFreeShareMemory
+80016de0   BSP_AllocShareMemoryById
+80017af4   BSP_ArchInit
+80015af4   BSP_ClearAllSpinlock
+800103cc   BSP_ClearDspInterrupt
+80010428   BSP_ClearDspInterruptAll
+800030b8   BSP_CreatNewXMPArea
+80010274   BSP_DisableDspInterrupt
+80017028   BSP_DisableIer
+80016fc8   BSP_DisableInt
+800170a4   BSP_DisableIntIrqSave
+8000e458   BSP_DoIpc
+8000e648   BSP_DoIpcSimple
+80010214   BSP_EnableDspInterrupt
+8001700c   BSP_EnableIer
+80016fd8   BSP_EnableInt
+800170ac   BSP_EnableIntIrqRestore
+80016ed4   BSP_FreeShareMemory
+800001b4   BSP_FreeXmpMemArea
+80011404   BSP_GetC6xTimer
+80007b20   BSP_GetCicChip
+8000d604   BSP_GetCurCombineAllState
+8000d568   BSP_GetCurCombineState
+8000d414   BSP_GetCurCorepac
+8000d3f0   BSP_GetCurCorepacIntc
+80016fa8   BSP_GetCurDp
+8000d4d0   BSP_GetCurEvent
+80016fb0   BSP_GetCurSp
+80010448   BSP_GetExecutionState
+80000100   BSP_GetFreeXmpMemArea
+80002fa0   BSP_GetMemAreaPerm
+80015ac0   BSP_GetSpinlock
+80015b40   BSP_GetSpinlockIrqSaved
+800186c0   BSP_GetTransactionData
+80000224   BSP_GetXmpMemAreaByIndx
+80011350   BSP_InitC6xTimer
+800129d8   BSP_InitCacheController
+80008670   BSP_InitCic
+8000d438   BSP_InitCurCorepac
+8000e280   BSP_InitIPCModule
+80000474   BSP_InitMpu
+80016f70   BSP_InitializeIntCtr
+80016f60   BSP_InitializeVector
+8001400c   BSP_InsertMemArea
+80017000   BSP_IntMaskRestore
+80016ff0   BSP_IntMaskSave
+8000e340   BSP_InterruptCore
+80010674   BSP_IsrHandlerEntry
+80014278   BSP_IterateAllMemArea
+800141c0   BSP_LookupMemArea
+80017098   BSP_MemoryFence
+8000e220   BSP_MessageListIsEmpty
+80014164   BSP_MidorderTraverse
+80010648   BSP_OtherOSIsrHandlerEntry
+80016fb8   BSP_RawGetCoreId
+800170c0   BSP_ReadCSR
+800170cc   BSP_ReadIRP
+80017048   BSP_ReadIer
+80017080   BSP_ReadIfr
+8000e3f8   BSP_ReadIpcMsg
+8000e18c   BSP_ReadMessage
+8001708c   BSP_ReadTSR
+80015ad0   BSP_ReleaseSpinlock
+80015b58   BSP_ReleaseSpinlockIrqRestore
+80014110   BSP_RemoveMemArea
+80003230   BSP_RemoveXMPArea
+8000e0e8   BSP_SendMessage
+80010370   BSP_SetDspInterrupt
+800170b4   BSP_SetIdle
+8000263c   BSP_SetMemAreaNewPerm
+80010ff4   BSP_TimeInterruptISR
+80015ae4   BSP_TryToGeSpinlock
+80017070   BSP_WriteIcr
+80017054   BSP_WriteIer
+80017064   BSP_WriteIsr
+8001a7a0   C$$EXIT
+8001a438   C$$IO$$
+8001e8c0   C0_TaskStack
+8001f840   C1_TaskStack
+80007614   CancelAlarm
+80003f0c   ChainTask
+80007b54   CicInit
+8000d960   ClearEvent
+8000fa94   CounterTrigger
+80012ea4   DisableAllInterrupts
+80016280   DisableOSInt
+80012ed4   EnableAllInterrupts
+800162a0   EnableOSInt
+8001a640   ErrorHook
+8001368c   FuncEventTask
+80013700   FuncFuelMassCalTask
+80013580   FuncIntActivateTask
+800136d4   FuncJ1939Task
+800136ac   FuncJobStatusTask
+80013600   FuncOS_5ms_task
+800134c4   FuncStartTask
+800135ac   FuncTenmsTask
+80006d70   GetAlarm
+80006c54   GetAlarmBase
+8000fba4   GetCounterInfo
+8000f9c0   GetCounterValue
+8000dd04   GetEvent
+800120d4   GetSpinlock
+80004638   GetTaskID
+800044c0   GetTaskState
+80019400   HOSTclock
+800194a0   HOSTclose
+80017e40   HOSTlseek
+80018340   HOSTopen
+80018a40   HOSTread
+800162c0   HOSTrename
+80019540   HOSTtime
+80018b00   HOSTunlink
+80018bc0   HOSTwrite
+8001a66c   IdleLoopHook
+8000f814   InitCounter
+80011018   InitTimer
+800117c8   ItDisAll
+80025a20   MessageBoxNode
+8002ed2c   OSCPUUsage
+800155d8   OSCtxSw
+8002ed20   OSCtxSwCtr
+800035a4   OSEK_TASK_CallTaskEntry
+8002ed24   OSEventFreeList
+80023810   OSEventTbl
+80005d60   OSFlagAccept
+80006004   OSFlagCreate
+800060a4   OSFlagDel
+8002ed28   OSFlagFreeList
+80006238   OSFlagPend
+80006660   OSFlagPost
+800068b0   OSFlagQuery
+80023830   OSFlagTbl
+8002ed44   OSIdleCtr
+8002ed30   OSIdleCtrMax
+8002ed34   OSIdleCtrRun
+80008940   OSInit
+80011840   OSInitHookBegin
+80011844   OSInitHookEnd
+80011808   OSIntCtxSw
+80015708   OSIntCtxSwRestore
+80008978   OSIntEnter
+800089ac   OSIntExit
+8002ed3a   OSIntExitY
+8002ed39   OSIntNesting
+8002ed64   OSInterrputSum
+8002ed3b   OSLockNesting
+80012764   OSMain
+8002e540   OSMapTbl
+8000ec80   OSMboxAccept
+8000ecd0   OSMboxCreate
+8000ed44   OSMboxDel
+8000eed0   OSMboxPend
+8000f024   OSMboxPost
+8000f0b4   OSMboxPostOpt
+8000f184   OSMboxQuery
+80011cc0   OSMemCreate
+8002ed58   OSMemFreeList
+80011e10   OSMemGet
+80011e90   OSMemPut
+80011f14   OSMemQuery
+80024b70   OSMemTbl
+8000a3a0   OSMutexAccept
+8000a490   OSMutexCreate
+8000a5b4   OSMutexDel
+8000a78c   OSMutexPend
+8000aaec   OSMutexPost
+8000adc0   OSMutexQuery
+8002ed3c   OSPrioCur
+8002ed3d   OSPrioHighRdy
+8000b9c0   OSQAccept
+8000ba64   OSQCreate
+8000bb88   OSQDel
+8000bd60   OSQFlush
+8002ed5c   OSQFreeList
+8000bdc8   OSQPend
+8000bf64   OSQPost
+8000c044   OSQPostFront
+8000c130   OSQPostOpt
+8000c298   OSQQuery
+80024be0   OSQTbl
+8002ed3e   OSRdyGrp
+80024070   OSRdyTbl
+80015560   OSRestoreHighRdy
+8002ed3f   OSRunning
+80008a84   OSSchedLock
+80008ac8   OSSchedUnlock
+8000fd40   OSSemAccept
+8000fda0   OSSemCreate
+8000fe14   OSSemDel
+8000ffa0   OSSemPend
+800100c0   OSSemPost
+80010148   OSSemQuery
+80008b30   OSStart
+800117d8   OSStartHighRdy
+80008bd0   OSStatInit
+8002ed38   OSStatRdy
+8002ed48   OSTCBCur
+8002ed4c   OSTCBFreeList
+8002ed50   OSTCBHighRdy
+8001186c   OSTCBInitHook
+8002ed54   OSTCBList
+80024880   OSTCBPrioTbl
+800248c0   OSTCBTbl
+800096c0   OSTaskChangePrio
+800099c4   OSTaskCreate
+80009ac8   OSTaskCreateExt
+80011848   OSTaskCreateHook
+8002ed40   OSTaskCtr
+80009c24   OSTaskDel
+80011854   OSTaskDelHook
+80009eb4   OSTaskDelReq
+80011880   OSTaskIdleHook
+80024080   OSTaskIdleStk
+8000a2ec   OSTaskQuery
+80009f74   OSTaskResume
+80011868   OSTaskStatHook
+80023870   OSTaskStatStk
+8000a068   OSTaskStkChk
+80011460   OSTaskStkInit
+8000a190   OSTaskSuspend
+80011864   OSTaskSwHook
+8002ed60   OSTime
+80012b20   OSTimeDly
+80012bb4   OSTimeDlyHMSM
+80012d04   OSTimeDlyResume
+80012df0   OSTimeGet
+80012e14   OSTimeSet
+80008c20   OSTimeTick
+80011878   OSTimeTickHook
+8002df20   OSUnMapTbl
+80008d30   OSVersion
+80008d34   OS_Dummy
+80011780   OS_ENTER_CRITICAL
+800117a0   OS_EXIT_CRITICAL
+80008f70   OS_EventTO
+80008d38   OS_EventTaskRdy
+80008eb4   OS_EventTaskWait
+80008fec   OS_EventWaitListInit
+80006a54   OS_FlagInit
+80006ba8   OS_FlagUnlink
+80011fc8   OS_MemInit
+8000c38c   OS_QInit
+800092f0   OS_Sched
+8000948c   OS_TCBInit
+800093a0   OS_TaskIdle
+800093c8   OS_TaskStat
+80025a60   PerCoreMessageList
+8001a654   PostTaskHook
+8001a650   PreTaskHook
+800121b4   ReleaseSpinlock
+80012f90   ResumeAllInterrupts
+800130b4   ResumeOSInterrupts
+800042e0   Schedule
+80007340   SetAbsAlarm
+80006f8c   SetAlarm
+8000d794   SetEvent
+8000702c   SetRelAlarm
+800127d8   ShutdownAllCores
+8001a65c   ShutdownHook
+80012628   ShutdownOS
+8001266c   StartCore
+80012508   StartOS
+8001a658   StartupHook
+80012f10   SuspendAllInterrupts
+80013038   SuspendOSInterrupts
+80015ce0   SysArch_Configuration
+80015c90   SysTick_Handler
+80022810   TASK0_STK
+80022010   TASK1_STK
+80023010   TASK_START_STK
+80015c38   Task0
+80015c68   Task1
+80015bd4   TaskStart
+80003cd0   TerminateTask
+80013738   TimingInt
+800122b0   TryToGetSpinlock
+8000da88   WaitEvent
+80000294   __BSP_GetMpuMemArea
+00840000   __CIOBUF_
+8002f564   __TI_CINIT_Base
+8002f584   __TI_CINIT_Limit
+8002f548   __TI_Handler_Table_Base
+8002f554   __TI_Handler_Table_Limit
+00840000   __TI_STACK_END
+00040000   __TI_STACK_SIZE
+8002ecf8   __TI_STATIC_BASE
+00008000   __TI_SYSMEM_SIZE
+00000001   __TI_args_main
+8001a800   __TI_decompress_none
+8001a840   __TI_decompress_rle
+8001a820   __TI_decompress_rle24
+8002ecbc   __TI_enable_exit_profile_output
+ffffffff   __TI_pprof_out_hndl
+ffffffff   __TI_prof_data_size
+ffffffff   __TI_prof_data_start
+80018880   __TI_zero_init
+ffffffff   __binit__
+8000e6a0   __c6xabi_divd
+800195e0   __c6xabi_divli
+80017780   __c6xabi_divlli
+80018c80   __c6xabi_divu
+80016460   __c6xabi_divul
+80014ca0   __c6xabi_divull
+80017260   __c6xabi_frcmpyd_div
+8001a440   __c6xabi_isinf
+80019cc0   __c6xabi_llshl
+8001a140   __c6xabi_llshr
+8001a1a0   __c6xabi_llshru
+8001a6c0   __c6xabi_negll
+8001a500   __c6xabi_remli
+8001a200   __c6xabi_remlli
+8001a540   __c6xabi_remul
+8001a260   __c6xabi_remull
+80018420   __c6xabi_strasgi
+8001a580   __c6xabi_strasgi_64plus
+ffffffff   __c_args__
+80018c80   __divu
+80011bb0   __func_test
+80019680   __strasg
+80018420   __strasgi
+8001a580   __strasgi_64plus
+8001a6e0   __tdeh_init
+8001a5c0   _args_main
+80016c60   _auto_init_elf
+80019d40   _c_int00
+80018d40   _cleanup
+8002ecb4   _cleanup_ptr
+8002de10   _ctypes_
+80018e00   _doflush
+8002ecb8   _dtors_ptr
+8002eb0c   _ft_end
+8002e760   _ftable
+8002e8c8   _lock
+80019dc0   _minit
+8001a700   _nop
+80010b60   _printfi
+80018ec0   _rd_ok
+8001a760   _register_lock
+8001a780   _register_unlock
+00800000   _stack
+8001a2c0   _subcull
+80025d00   _sys_memory
+80025ac0   _tmpnams
+8002e8cc   _unlock
+8002f000   _vectors
+80017f40   _wrt_ok
+8001a7a0   abort
+8001a7c0   abs
+80016600   add_device
+800185e0   atoi
+ffffffff   binit
+8000b440   c_int10
+8000b52c   c_int11
+8000b614   c_int12
+8000b700   c_int13
+8000b7ec   c_int14
+8000b8d4   c_int15
+8000aec0   c_int4
+8000afac   c_int5
+8000b094   c_int6
+8000b180   c_int7
+8000b26c   c_int8
+8000b354   c_int9
+80019e40   calloc
+800187a0   close
+80018040   copy_in
+800208f0   core0_TaskReadyTaskTable
+8002ec00   core0_almControl_table
+8001f800   core0_alm_table
+8002ec20   core0_counterCfg_table
+8001f7d0   core0_counter_table
+8002e9f0   core0_taskConfig_table
+8001f570   core0_taskContext_table
+8001f4c0   core0_taskControlblock_table
+8001f7b0   core0_taskRead_block
+800257e0   core0_tick
+80020af0   core1_TaskReadyTaskTable
+8002ec40   core1_almControl_table
+800202c0   core1_alm_table
+8002ecc0   core1_counterCfg_table
+800202a0   core1_counter_table
+8002ead0   core1_taskConfig_table
+800200c8   core1_taskContext_table
+80020040   core1_taskControlblock_table
+80020280   core1_taskRead_block
+800257f0   core1_tick
+80020cf0   core2_TaskReadyTaskTable
+8002ecd0   core2_counterCfg_table
+80020560   core2_counter_table
+8002eb10   core2_taskConfig_table
+80020388   core2_taskContext_table
+80020300   core2_taskControlblock_table
+80020540   core2_taskRead_block
+80020ef0   core3_TaskReadyTaskTable
+8002ec60   core3_almControl_table
+800208b0   core3_alm_table
+8002ece0   core3_counterCfg_table
+80020890   core3_counter_table
+8002ea40   core3_taskConfig_table
+80020630   core3_taskContext_table
+80020580   core3_taskControlblock_table
+80020870   core3_taskRead_block
+800210f0   coreIpcDatas
+8002e940   coreRpcFunc
+8002eca0   coreSpinlocks
+8002ed00   count
+80019f24   ex_main
+80018960   exit
+80017c00   fclose
+80018140   fflush
+8001a860   find_registered_device
+8001a320   fopen
+80017500   fputc
+80013160   fputs
+800147c0   free
+80019f40   freopen
+80018f80   fseek
+80011c60   func_test
+80011be8   func_test_stub
+80011a84   func_test_stub_proxy
+80018240   getenv
+8001a880   labs
+8001a600   llabs
+80019040   lseek
+80019100   ltoa
+80013724   main
+80024c10   main_mpu
+800167a0   malloc
+80014a40   memalign
+8001a380   memccpy
+80019b80   memcpy
+80019bd4   memset
+800170e0   open
+800078b0   osekAlarm_Check1
+8000796c   osekAlarm_Check2
+80007a30   osekAlarm_Initialize
+8002ec80   osekAlarm_alarmsMap
+8002e560   osekConfig_InterruptEntryTable
+8002ea90   osekConfig_InterruptTypeTable
+8000fc84   osekCounter_Initialize
+8000d714   osekEvent_SetEvent
+8002ed0c   osekHook_ErrorNestedLevel
+8002ed08   osekHook_ObjId
+8002ed04   osekHook_ServiceId
+80012e54   osekInterrupt_Initialize
+80017d34   osekKernel_Initialize
+8002eb50   osekKernel_coreAlarms
+8002eb80   osekKernel_coreCounters
+8002e8d0   osekKernel_coreTasks
+80025800   osekKernel_osKernel
+800123b8   osekSpinLock_Init
+80021ff0   osekSpin_LockTable
+80016258   osekTarget_LoadBTSP_do
+8001624c   osekTarget_LoadETSP
+800161a4   osekTarget_RestoreContext
+80016100   osekTarget_SaveContext
+80003694   osekTask_ActiveTask
+800035e8   osekTask_ChangeRunningTaskPriority
+800037f4   osekTask_Dispatch
+800046b0   osekTask_Initialize
+8002e660   osekTask_PriorityIndexTable
+800039d8   osekTask_TerminateDispatch
+800037a8   osekTask_WaitTask
+80003730   osekTask_WakeTask
+8002ebb0   osekTask_tasksMap
+80019fc0   printf
+80017500   putc
+8001a8a0   putchar
+8001a680   puts
+8000ca48   rb_erase
+8000cc24   rb_first
+8000c5a8   rb_insert_color
+8000cc60   rb_last
+8000cc98   rb_next
+8000cd14   rb_prev
+8000cd94   rb_replace_node
+800191c0   read
+8001a040   readmsg
+80013a40   realloc
+8001a0c0   remove
+80019ae0   remove_device
+80019280   rename
+80004bb0   rpc_activateTask_Server
+80004a84   rpc_activateTask_stub
+80005c0c   rpc_cancelAlarm_Server
+80005ac8   rpc_cancelAlarm_stub
+80005980   rpc_getAlarm_Server
+80005824   rpc_getAlarm_stub
+80004e24   rpc_getTaskState_Server
+80004ccc   rpc_getTaskState_stub
+80025c70   rpc_nodes
+80005670   rpc_setAbsAlarm_Server
+8000550c   rpc_setAbsAlarm_stub
+800050ac   rpc_setEvent_Server
+80004f60   rpc_setEvent_stub
+8000530c   rpc_setRelAlarm_Server
+800051ac   rpc_setRelAlarm_stub
+80016940   setvbuf
+80013474   sleep
+8002ecf8   testVar1
+8002ecfc   testVar2
+80025620   timer_devs
+80015b94   ucmain
+8001a0c0   unlink
+80018760   wait
+80019340   write
+8001a3e0   writemsg
+80024c50   xmc
+8002ed1c   xmc_bitmaps
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000001   __TI_args_main
+00008000   __TI_SYSMEM_SIZE
+00040000   __TI_STACK_SIZE
+00800000   _stack
+00840000   __CIOBUF_
+00840000   __TI_STACK_END
+80000100   BSP_GetFreeXmpMemArea
+800001b4   BSP_FreeXmpMemArea
+80000224   BSP_GetXmpMemAreaByIndx
+80000294   __BSP_GetMpuMemArea
+80000474   BSP_InitMpu
+8000263c   BSP_SetMemAreaNewPerm
+80002fa0   BSP_GetMemAreaPerm
+800030b8   BSP_CreatNewXMPArea
+80003230   BSP_RemoveXMPArea
+800035a4   OSEK_TASK_CallTaskEntry
+800035e8   osekTask_ChangeRunningTaskPriority
+80003694   osekTask_ActiveTask
+80003730   osekTask_WakeTask
+800037a8   osekTask_WaitTask
+800037f4   osekTask_Dispatch
+800039d8   osekTask_TerminateDispatch
+80003b18   ActivateTask
+80003cd0   TerminateTask
+80003f0c   ChainTask
+800042e0   Schedule
+800044c0   GetTaskState
+80004638   GetTaskID
+800046b0   osekTask_Initialize
+80004a84   rpc_activateTask_stub
+80004bb0   rpc_activateTask_Server
+80004ccc   rpc_getTaskState_stub
+80004e24   rpc_getTaskState_Server
+80004f60   rpc_setEvent_stub
+800050ac   rpc_setEvent_Server
+800051ac   rpc_setRelAlarm_stub
+8000530c   rpc_setRelAlarm_Server
+8000550c   rpc_setAbsAlarm_stub
+80005670   rpc_setAbsAlarm_Server
+80005824   rpc_getAlarm_stub
+80005980   rpc_getAlarm_Server
+80005ac8   rpc_cancelAlarm_stub
+80005c0c   rpc_cancelAlarm_Server
+80005d60   OSFlagAccept
+80006004   OSFlagCreate
+800060a4   OSFlagDel
+80006238   OSFlagPend
+80006660   OSFlagPost
+800068b0   OSFlagQuery
+80006a54   OS_FlagInit
+80006ba8   OS_FlagUnlink
+80006c54   GetAlarmBase
+80006d70   GetAlarm
+80006f8c   SetAlarm
+8000702c   SetRelAlarm
+80007340   SetAbsAlarm
+80007614   CancelAlarm
+800078b0   osekAlarm_Check1
+8000796c   osekAlarm_Check2
+80007a30   osekAlarm_Initialize
+80007b20   BSP_GetCicChip
+80007b54   CicInit
+80008670   BSP_InitCic
+80008940   OSInit
+80008978   OSIntEnter
+800089ac   OSIntExit
+80008a84   OSSchedLock
+80008ac8   OSSchedUnlock
+80008b30   OSStart
+80008bd0   OSStatInit
+80008c20   OSTimeTick
+80008d30   OSVersion
+80008d34   OS_Dummy
+80008d38   OS_EventTaskRdy
+80008eb4   OS_EventTaskWait
+80008f70   OS_EventTO
+80008fec   OS_EventWaitListInit
+800092f0   OS_Sched
+800093a0   OS_TaskIdle
+800093c8   OS_TaskStat
+8000948c   OS_TCBInit
+800096c0   OSTaskChangePrio
+800099c4   OSTaskCreate
+80009ac8   OSTaskCreateExt
+80009c24   OSTaskDel
+80009eb4   OSTaskDelReq
+80009f74   OSTaskResume
+8000a068   OSTaskStkChk
+8000a190   OSTaskSuspend
+8000a2ec   OSTaskQuery
+8000a3a0   OSMutexAccept
+8000a490   OSMutexCreate
+8000a5b4   OSMutexDel
+8000a78c   OSMutexPend
+8000aaec   OSMutexPost
+8000adc0   OSMutexQuery
+8000aec0   c_int4
+8000afac   c_int5
+8000b094   c_int6
+8000b180   c_int7
+8000b26c   c_int8
+8000b354   c_int9
+8000b440   c_int10
+8000b52c   c_int11
+8000b614   c_int12
+8000b700   c_int13
+8000b7ec   c_int14
+8000b8d4   c_int15
+8000b9c0   OSQAccept
+8000ba64   OSQCreate
+8000bb88   OSQDel
+8000bd60   OSQFlush
+8000bdc8   OSQPend
+8000bf64   OSQPost
+8000c044   OSQPostFront
+8000c130   OSQPostOpt
+8000c298   OSQQuery
+8000c38c   OS_QInit
+8000c5a8   rb_insert_color
+8000ca48   rb_erase
+8000cc24   rb_first
+8000cc60   rb_last
+8000cc98   rb_next
+8000cd14   rb_prev
+8000cd94   rb_replace_node
+8000d3f0   BSP_GetCurCorepacIntc
+8000d414   BSP_GetCurCorepac
+8000d438   BSP_InitCurCorepac
+8000d4d0   BSP_GetCurEvent
+8000d568   BSP_GetCurCombineState
+8000d604   BSP_GetCurCombineAllState
+8000d714   osekEvent_SetEvent
+8000d794   SetEvent
+8000d960   ClearEvent
+8000da88   WaitEvent
+8000dd04   GetEvent
+8000e0e8   BSP_SendMessage
+8000e18c   BSP_ReadMessage
+8000e220   BSP_MessageListIsEmpty
+8000e280   BSP_InitIPCModule
+8000e340   BSP_InterruptCore
+8000e3f8   BSP_ReadIpcMsg
+8000e42c   BSP_AckIpc
+8000e458   BSP_DoIpc
+8000e648   BSP_DoIpcSimple
+8000e6a0   __c6xabi_divd
+8000ec80   OSMboxAccept
+8000ecd0   OSMboxCreate
+8000ed44   OSMboxDel
+8000eed0   OSMboxPend
+8000f024   OSMboxPost
+8000f0b4   OSMboxPostOpt
+8000f184   OSMboxQuery
+8000f814   InitCounter
+8000f9c0   GetCounterValue
+8000fa94   CounterTrigger
+8000fba4   GetCounterInfo
+8000fc84   osekCounter_Initialize
+8000fd40   OSSemAccept
+8000fda0   OSSemCreate
+8000fe14   OSSemDel
+8000ffa0   OSSemPend
+800100c0   OSSemPost
+80010148   OSSemQuery
+80010214   BSP_EnableDspInterrupt
+80010274   BSP_DisableDspInterrupt
+800102d4   BSP_AckDspInterrupt
+80010370   BSP_SetDspInterrupt
+800103cc   BSP_ClearDspInterrupt
+80010428   BSP_ClearDspInterruptAll
+80010448   BSP_GetExecutionState
+80010648   BSP_OtherOSIsrHandlerEntry
+80010674   BSP_IsrHandlerEntry
+80010b60   _printfi
+80010ff4   BSP_TimeInterruptISR
+80011018   InitTimer
+800112ac   AckTimerInt
+80011350   BSP_InitC6xTimer
+80011404   BSP_GetC6xTimer
+80011460   OSTaskStkInit
+80011780   OS_ENTER_CRITICAL
+800117a0   OS_EXIT_CRITICAL
+800117c8   ItDisAll
+800117d8   OSStartHighRdy
+80011808   OSIntCtxSw
+80011840   OSInitHookBegin
+80011844   OSInitHookEnd
+80011848   OSTaskCreateHook
+80011854   OSTaskDelHook
+80011864   OSTaskSwHook
+80011868   OSTaskStatHook
+8001186c   OSTCBInitHook
+80011878   OSTimeTickHook
+80011880   OSTaskIdleHook
+80011a84   func_test_stub_proxy
+80011bb0   __func_test
+80011be8   func_test_stub
+80011c60   func_test
+80011cc0   OSMemCreate
+80011e10   OSMemGet
+80011e90   OSMemPut
+80011f14   OSMemQuery
+80011fc8   OS_MemInit
+800120d4   GetSpinlock
+800121b4   ReleaseSpinlock
+800122b0   TryToGetSpinlock
+800123b8   osekSpinLock_Init
+80012508   StartOS
+80012628   ShutdownOS
+8001266c   StartCore
+80012764   OSMain
+800127d8   ShutdownAllCores
+800129d8   BSP_InitCacheController
+80012b20   OSTimeDly
+80012bb4   OSTimeDlyHMSM
+80012d04   OSTimeDlyResume
+80012df0   OSTimeGet
+80012e14   OSTimeSet
+80012e54   osekInterrupt_Initialize
+80012ea4   DisableAllInterrupts
+80012ed4   EnableAllInterrupts
+80012f10   SuspendAllInterrupts
+80012f90   ResumeAllInterrupts
+80013038   SuspendOSInterrupts
+800130b4   ResumeOSInterrupts
+80013160   fputs
+80013474   sleep
+800134c4   FuncStartTask
+80013580   FuncIntActivateTask
+800135ac   FuncTenmsTask
+80013600   FuncOS_5ms_task
+8001368c   FuncEventTask
+800136ac   FuncJobStatusTask
+800136d4   FuncJ1939Task
+80013700   FuncFuelMassCalTask
+80013724   main
+80013738   TimingInt
+80013a40   realloc
+8001400c   BSP_InsertMemArea
+80014110   BSP_RemoveMemArea
+80014164   BSP_MidorderTraverse
+800141c0   BSP_LookupMemArea
+80014278   BSP_IterateAllMemArea
+800147c0   free
+80014a40   memalign
+80014ca0   __c6xabi_divull
+80015560   OSRestoreHighRdy
+800155d8   OSCtxSw
+80015708   OSIntCtxSwRestore
+80015ac0   BSP_GetSpinlock
+80015ad0   BSP_ReleaseSpinlock
+80015ae4   BSP_TryToGeSpinlock
+80015af4   BSP_ClearAllSpinlock
+80015b40   BSP_GetSpinlockIrqSaved
+80015b58   BSP_ReleaseSpinlockIrqRestore
+80015b94   ucmain
+80015bd4   TaskStart
+80015c38   Task0
+80015c68   Task1
+80015c90   SysTick_Handler
+80015ce0   SysArch_Configuration
+80016100   osekTarget_SaveContext
+800161a4   osekTarget_RestoreContext
+8001624c   osekTarget_LoadETSP
+80016258   osekTarget_LoadBTSP_do
+80016280   DisableOSInt
+800162a0   EnableOSInt
+800162c0   HOSTrename
+80016460   __c6xabi_divul
+80016600   add_device
+800167a0   malloc
+80016940   setvbuf
+80016c60   _auto_init_elf
+80016de0   BSP_AllocShareMemoryById
+80016e68   BSP_AllocFreeShareMemory
+80016ed4   BSP_FreeShareMemory
+80016f60   BSP_InitializeVector
+80016f70   BSP_InitializeIntCtr
+80016fa8   BSP_GetCurDp
+80016fb0   BSP_GetCurSp
+80016fb8   BSP_RawGetCoreId
+80016fc8   BSP_DisableInt
+80016fd8   BSP_EnableInt
+80016ff0   BSP_IntMaskSave
+80017000   BSP_IntMaskRestore
+8001700c   BSP_EnableIer
+80017028   BSP_DisableIer
+80017048   BSP_ReadIer
+80017054   BSP_WriteIer
+80017064   BSP_WriteIsr
+80017070   BSP_WriteIcr
+80017080   BSP_ReadIfr
+8001708c   BSP_ReadTSR
+80017098   BSP_MemoryFence
+800170a4   BSP_DisableIntIrqSave
+800170ac   BSP_EnableIntIrqRestore
+800170b4   BSP_SetIdle
+800170c0   BSP_ReadCSR
+800170cc   BSP_ReadIRP
+800170e0   open
+80017260   __c6xabi_frcmpyd_div
+80017500   fputc
+80017500   putc
+80017780   __c6xabi_divlli
+80017af4   BSP_ArchInit
+80017c00   fclose
+80017d34   osekKernel_Initialize
+80017e40   HOSTlseek
+80017f40   _wrt_ok
+80018040   copy_in
+80018140   fflush
+80018240   getenv
+80018340   HOSTopen
+80018420   __c6xabi_strasgi
+80018420   __strasgi
+800185e0   atoi
+800186c0   BSP_GetTransactionData
+80018760   wait
+800187a0   close
+80018880   __TI_zero_init
+80018960   exit
+80018a40   HOSTread
+80018b00   HOSTunlink
+80018bc0   HOSTwrite
+80018c80   __c6xabi_divu
+80018c80   __divu
+80018d40   _cleanup
+80018e00   _doflush
+80018ec0   _rd_ok
+80018f80   fseek
+80019040   lseek
+80019100   ltoa
+800191c0   read
+80019280   rename
+80019340   write
+80019400   HOSTclock
+800194a0   HOSTclose
+80019540   HOSTtime
+800195e0   __c6xabi_divli
+80019680   __strasg
+80019ae0   remove_device
+80019b80   memcpy
+80019bd4   memset
+80019cc0   __c6xabi_llshl
+80019d40   _c_int00
+80019dc0   _minit
+80019e40   calloc
+80019f24   ex_main
+80019f40   freopen
+80019fc0   printf
+8001a040   readmsg
+8001a0c0   remove
+8001a0c0   unlink
+8001a140   __c6xabi_llshr
+8001a1a0   __c6xabi_llshru
+8001a200   __c6xabi_remlli
+8001a260   __c6xabi_remull
+8001a2c0   _subcull
+8001a320   fopen
+8001a380   memccpy
+8001a3e0   writemsg
+8001a438   C$$IO$$
+8001a440   __c6xabi_isinf
+8001a500   __c6xabi_remli
+8001a540   __c6xabi_remul
+8001a580   __c6xabi_strasgi_64plus
+8001a580   __strasgi_64plus
+8001a5c0   _args_main
+8001a600   llabs
+8001a640   ErrorHook
+8001a650   PreTaskHook
+8001a654   PostTaskHook
+8001a658   StartupHook
+8001a65c   ShutdownHook
+8001a66c   IdleLoopHook
+8001a680   puts
+8001a6c0   __c6xabi_negll
+8001a6e0   __tdeh_init
+8001a700   _nop
+8001a760   _register_lock
+8001a780   _register_unlock
+8001a7a0   C$$EXIT
+8001a7a0   abort
+8001a7c0   abs
+8001a800   __TI_decompress_none
+8001a820   __TI_decompress_rle24
+8001a840   __TI_decompress_rle
+8001a860   find_registered_device
+8001a880   labs
+8001a8a0   putchar
+8001e8c0   C0_TaskStack
+8001f4c0   core0_taskControlblock_table
+8001f570   core0_taskContext_table
+8001f7b0   core0_taskRead_block
+8001f7d0   core0_counter_table
+8001f800   core0_alm_table
+8001f840   C1_TaskStack
+80020040   core1_taskControlblock_table
+800200c8   core1_taskContext_table
+80020280   core1_taskRead_block
+800202a0   core1_counter_table
+800202c0   core1_alm_table
+80020300   core2_taskControlblock_table
+80020388   core2_taskContext_table
+80020540   core2_taskRead_block
+80020560   core2_counter_table
+80020580   core3_taskControlblock_table
+80020630   core3_taskContext_table
+80020870   core3_taskRead_block
+80020890   core3_counter_table
+800208b0   core3_alm_table
+800208f0   core0_TaskReadyTaskTable
+80020af0   core1_TaskReadyTaskTable
+80020cf0   core2_TaskReadyTaskTable
+80020ef0   core3_TaskReadyTaskTable
+800210f0   coreIpcDatas
+80021ff0   osekSpin_LockTable
+80022010   TASK1_STK
+80022810   TASK0_STK
+80023010   TASK_START_STK
+80023810   OSEventTbl
+80023830   OSFlagTbl
+80023870   OSTaskStatStk
+80024070   OSRdyTbl
+80024080   OSTaskIdleStk
+80024880   OSTCBPrioTbl
+800248c0   OSTCBTbl
+80024b70   OSMemTbl
+80024be0   OSQTbl
+80024c10   main_mpu
+80024c50   xmc
+80025620   timer_devs
+800257e0   core0_tick
+800257f0   core1_tick
+80025800   osekKernel_osKernel
+80025a20   MessageBoxNode
+80025a60   PerCoreMessageList
+80025ac0   _tmpnams
+80025c70   rpc_nodes
+80025d00   _sys_memory
+8002de10   _ctypes_
+8002df20   OSUnMapTbl
+8002e540   OSMapTbl
+8002e560   osekConfig_InterruptEntryTable
+8002e660   osekTask_PriorityIndexTable
+8002e760   _ftable
+8002e8c8   _lock
+8002e8cc   _unlock
+8002e8d0   osekKernel_coreTasks
+8002e940   coreRpcFunc
+8002e9f0   core0_taskConfig_table
+8002ea40   core3_taskConfig_table
+8002ea90   osekConfig_InterruptTypeTable
+8002ead0   core1_taskConfig_table
+8002eb0c   _ft_end
+8002eb10   core2_taskConfig_table
+8002eb50   osekKernel_coreAlarms
+8002eb80   osekKernel_coreCounters
+8002ebb0   osekTask_tasksMap
+8002ec00   core0_almControl_table
+8002ec20   core0_counterCfg_table
+8002ec40   core1_almControl_table
+8002ec60   core3_almControl_table
+8002ec80   osekAlarm_alarmsMap
+8002eca0   coreSpinlocks
+8002ecb4   _cleanup_ptr
+8002ecb8   _dtors_ptr
+8002ecbc   __TI_enable_exit_profile_output
+8002ecc0   core1_counterCfg_table
+8002ecd0   core2_counterCfg_table
+8002ece0   core3_counterCfg_table
+8002ecf8   __TI_STATIC_BASE
+8002ecf8   testVar1
+8002ecfc   testVar2
+8002ed00   count
+8002ed04   osekHook_ServiceId
+8002ed08   osekHook_ObjId
+8002ed0c   osekHook_ErrorNestedLevel
+8002ed1c   xmc_bitmaps
+8002ed20   OSCtxSwCtr
+8002ed24   OSEventFreeList
+8002ed28   OSFlagFreeList
+8002ed2c   OSCPUUsage
+8002ed30   OSIdleCtrMax
+8002ed34   OSIdleCtrRun
+8002ed38   OSStatRdy
+8002ed39   OSIntNesting
+8002ed3a   OSIntExitY
+8002ed3b   OSLockNesting
+8002ed3c   OSPrioCur
+8002ed3d   OSPrioHighRdy
+8002ed3e   OSRdyGrp
+8002ed3f   OSRunning
+8002ed40   OSTaskCtr
+8002ed44   OSIdleCtr
+8002ed48   OSTCBCur
+8002ed4c   OSTCBFreeList
+8002ed50   OSTCBHighRdy
+8002ed54   OSTCBList
+8002ed58   OSMemFreeList
+8002ed5c   OSQFreeList
+8002ed60   OSTime
+8002ed64   OSInterrputSum
+8002f000   _vectors
+8002f548   __TI_Handler_Table_Base
+8002f554   __TI_Handler_Table_Limit
+8002f564   __TI_CINIT_Base
+8002f584   __TI_CINIT_Limit
+ffffffff   __TI_pprof_out_hndl
+ffffffff   __TI_prof_data_size
+ffffffff   __TI_prof_data_start
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   binit
+
+[514 symbols]

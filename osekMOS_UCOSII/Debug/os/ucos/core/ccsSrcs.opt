@@ -1,0 +1,1 @@
+"../os/ucos/core/OS_CORE.C" "../os/ucos/core/OS_FLAG.C" "../os/ucos/core/OS_MBOX.C" "../os/ucos/core/OS_MEM.C" "../os/ucos/core/OS_MUTEX.C" "../os/ucos/core/OS_Q.C" "../os/ucos/core/OS_SEM.C" "../os/ucos/core/OS_TASK.C" "../os/ucos/core/OS_TIME.C" 
