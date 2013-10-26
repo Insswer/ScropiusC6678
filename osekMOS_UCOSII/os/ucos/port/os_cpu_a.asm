@@ -295,8 +295,6 @@ OSCtxSw:
 		STW		A13, *B15--[2]
 		STW		A14, *B15--[2]
 		STW		A15, *B15--[2]
-		MVC		CSR,  B4
-		STW		B4,	 *B15--[2]
 
 		MVKL	OSTCBCur, A4
 		MVKH	OSTCBCur, A4

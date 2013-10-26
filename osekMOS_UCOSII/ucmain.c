@@ -1,8 +1,8 @@
 
 #include "includes.h"	 
 
-#define STK_SIZE     512
-#define START_STK_SIZE   512
+#define STK_SIZE     1024
+#define START_STK_SIZE   1024
 
 
 #define TASK0_Prio       	14
@@ -57,7 +57,7 @@ void Task0(void *pdata)
 	while(1)
 	{
 		printf("Hello from UCOSII task0 \n");
-		OSTimeDlyHMSM(0,0,0,500);	
+		OSTimeDly(5);
 	}
 }
 
@@ -67,7 +67,7 @@ void Task1(void *pdata)
 	while(1)
 	{
 		printf("Hello from UCOSII task1 \n");
-		OSTimeDlyHMSM(0,0,0,200);	
+		OSTimeDly(5);
 	}
 }	  
 

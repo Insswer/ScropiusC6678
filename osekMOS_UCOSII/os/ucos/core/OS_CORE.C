@@ -112,7 +112,6 @@ void  OSIntEnter (void)
     if (OSRunning == TRUE) {
         if (OSIntNesting < 255) {
             OSIntNesting++;                      //�ж�Ƕ�׼������1
-            printf("OSIntNesting = %d\n", OSIntNesting);
         }
     }
 	//OS_EXIT_CRITICAL(); //���ж�
@@ -139,7 +138,6 @@ void  OSIntExit (void)
 //        OS_ENTER_CRITICAL();
         if (OSIntNesting > 0) {                            //����ж�Ƕ�״���0
             OSIntNesting--;								   //�ж�Ƕ�׼������1
-            printf("OSIntNesting = %d\n", OSIntNesting);
         }
 //1)�ж�Ƕ�ײ�����������Ƕ�׼�����(OSLockNesting)���߶���������
 //2)OSRdyTbl[]����ļ���ֵY�Ǳ�����ȫ�̱�OSIntExitY��
@@ -152,7 +150,7 @@ void  OSIntExit (void)
             OSPrioHighRdy = (INT8U)((OSIntExitY << 3) + OSUnMapTbl[OSRdyTbl[OSIntExitY]]);
             if (OSPrioHighRdy != OSPrioCur) {              //3
                 OSTCBHighRdy  = OSTCBPrioTbl[OSPrioHighRdy];//4
-                printf("switch to prio %d task\n", OSTCBHighRdy->OSTCBPrio);
+//                printf("switch to prio %d task\n", OSTCBHighRdy->OSTCBPrio);
                 OSCtxSwCtr++;                              //5
                 OSIntCtxSw();                              //6
             }
@@ -798,7 +796,7 @@ void  OS_Sched (void)
 		//Ϊʵ�������л���OSTCBHighRdy����ָ�����ȼ���ߵ��Ǹ�������ƿ�OS_TCB������ͨ��
 		//��OSPrioHighRdyΪ�±��OSTCBPrioTbl[]�����е��Ǹ�Ԫ�ظ���OSTCBHighRdy4ʵ�ֵ�
             OSTCBHighRdy = OSTCBPrioTbl[OSPrioHighRdy];
-            printf("switch to prio %d task\n", OSTCBHighRdy->OSTCBPrio);
+//            printf("switch to prio %d task\n", OSTCBHighRdy->OSTCBPrio);
             OSCtxSwCtr++;                              //ͳ�Ƽ�����OSCtxSwCtr��1���Ը��������л�����
             OS_TASK_SW();                              //�������OS_TASK_SW()4���ʵ���ϵ������л�
         }

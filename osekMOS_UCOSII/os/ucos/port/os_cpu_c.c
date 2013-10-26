@@ -43,6 +43,8 @@ OS_STK *OSTaskStkInit (void  (*task)(void  *parg), void  *parg, OS_STK  *ptos, I
                                                       /*  auto-saved on exception     */             
 	                                                  /*  ģ����쳣���Զ��ѼĴ���ѹջ*/
     /* For C66XX save CSR, IER, IRP  Entry Point, B3, B0 - B2, B4 - B14, A0 - 15 */
+    *stk = (INT32U)(csr_value|0x1);	/* CSR */
+    stk -= 2;
     *stk = (INT32U)task;		/* Entry Point */
     stk -= 2;
     *stk = (INT32U)0xffffffffL;	/* B3 */
@@ -107,8 +109,6 @@ OS_STK *OSTaskStkInit (void  (*task)(void  *parg), void  *parg, OS_STK  *ptos, I
     stk -= 2;
     *stk = (INT32U)0xafafafafL; /* A15 */
     stk -= 2;
-    *stk = (INT32U)(csr_value|0x1);	/* CSR */
-    stk -= 2;
 
     return(stk);
 }
@@ -144,7 +144,7 @@ void OSStartHighRdy(void)
 	OSTaskSwHook();
 	OSRunning = 1;
 	sp = (unsigned long)OSTCBHighRdy->OSTCBStkPtr;
-	printf("start high rdy task with sp 0x%08x\n", sp);
+//	printf("start high rdy task with sp 0x%08x\n", sp);
 	OSRestoreHighRdy(sp);
 }
 
@@ -156,7 +156,7 @@ void OSIntCtxSw(void)
 	OSTCBCur = OSTCBHighRdy;
 	OSPrioCur = OSPrioHighRdy;
 	sp = (unsigned long)OSTCBHighRdy->OSTCBStkPtr;
-	printf("switch to sp 0x%08x\n", sp);
+//	printf("switch to sp 0x%08x\n", sp);
 	OSIntCtxSwRestore(sp);
 }
 
@@ -281,7 +281,7 @@ unsigned long OSTaskSwHook (void)
 	OSTCBCur = OSTCBHighRdy;
 	OSPrioCur = OSPrioHighRdy;
 	sp = (unsigned long)OSTCBHighRdy->OSTCBStkPtr;
-	printf("switch to sp 0x%08x\n", sp);
+//	printf("switch to sp 0x%08x\n", sp);
 	return sp;
 }
 
