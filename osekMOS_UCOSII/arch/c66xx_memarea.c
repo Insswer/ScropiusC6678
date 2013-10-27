@@ -96,5 +96,5 @@ struct mem_area *BSP_LookupMemArea(struct rb_root *root, unsigned long start_add
 void BSP_IterateAllMemArea(struct rb_root *root, void (*fn)(struct mem_area *area))
 {
 	if (root != NULL)
-		BSP_MidorderTraverse(root, fn);
+		BSP_MidorderTraverse(root->rb_node, fn);
 }
