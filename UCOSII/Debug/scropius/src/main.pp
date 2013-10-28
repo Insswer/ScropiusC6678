@@ -2,12 +2,22 @@
 
 scropius/src/main.obj: ../scropius/src/main.c
 scropius/src/main.obj: H:/c6678/workspace/UCOSII_Double/scropius/include/sc_includes.h
-scropius/src/main.obj: H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/string.h
-scropius/src/main.obj: H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/linkage.h
+scropius/src/main.obj: H:/c6678/workspace/UCOSII_Double/scropius/include/scropius_cfg.h
+scropius/src/main.obj: H:/c6678/workspace/UCOSII_Double/scropius/include/sc_int.h
+scropius/src/main.obj: H:/c6678/workspace/UCOSII_Double/scropius/include/sc_os.h
+scropius/src/main.obj: H:/c6678/workspace/UCOSII_Double/scropius/include/sc_includes.h
 scropius/src/main.obj: H:/c6678/workspace/UCOSII_Double/lib/include/list.h
 scropius/src/main.obj: H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_io.h
 scropius/src/main.obj: H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/stdio.h
+scropius/src/main.obj: H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/linkage.h
 scropius/src/main.obj: H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/stdarg.h
+scropius/src/main.obj: H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_exception.h
+scropius/src/main.obj: H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/stdio.h
+scropius/src/main.obj: H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/ctype.h
+scropius/src/main.obj: H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/_isfuncdcl.h
+scropius/src/main.obj: H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/stdlib.h
+scropius/src/main.obj: H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/stdarg.h
+scropius/src/main.obj: H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/string.h
 scropius/src/main.obj: H:/c6678/workspace/UCOSII_Double/lib/include/parcel.h
 scropius/src/main.obj: H:/c6678/workspace/UCOSII_Double/lib/include/string.h
 scropius/src/main.obj: H:/c6678/workspace/UCOSII_Double/lib/include/rb_tree.h
@@ -20,7 +30,6 @@ scropius/src/main.obj: H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_corep
 scropius/src/main.obj: H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_sysirq.h
 scropius/src/main.obj: H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_debug.h
 scropius/src/main.obj: H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/stdio.h
-scropius/src/main.obj: H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_exception.h
 scropius/src/main.obj: H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_init.h
 scropius/src/main.obj: H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_ipc.h
 scropius/src/main.obj: H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_itbl.h
@@ -28,17 +37,27 @@ scropius/src/main.obj: H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_memar
 scropius/src/main.obj: H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_mpu.h
 scropius/src/main.obj: H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_msmc.h
 scropius/src/main.obj: H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_rpc.h
-scropius/src/main.obj: H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_spinlock.h
-scropius/src/main.obj: H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_timer.h
+scropius/src/main.obj: H:/c6678/workspace/UCOSII_Double/arch/driver/include/c66xx_spinlock.h
+scropius/src/main.obj: H:/c6678/workspace/UCOSII_Double/arch/driver/include/c66xx_timer.h
 
 ../scropius/src/main.c: 
 H:/c6678/workspace/UCOSII_Double/scropius/include/sc_includes.h: 
-H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/string.h: 
-H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/linkage.h: 
+H:/c6678/workspace/UCOSII_Double/scropius/include/scropius_cfg.h: 
+H:/c6678/workspace/UCOSII_Double/scropius/include/sc_int.h: 
+H:/c6678/workspace/UCOSII_Double/scropius/include/sc_os.h: 
+H:/c6678/workspace/UCOSII_Double/scropius/include/sc_includes.h: 
 H:/c6678/workspace/UCOSII_Double/lib/include/list.h: 
 H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_io.h: 
 H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/stdio.h: 
+H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/linkage.h: 
 H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/stdarg.h: 
+H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_exception.h: 
+H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/stdio.h: 
+H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/ctype.h: 
+H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/_isfuncdcl.h: 
+H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/stdlib.h: 
+H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/stdarg.h: 
+H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/string.h: 
 H:/c6678/workspace/UCOSII_Double/lib/include/parcel.h: 
 H:/c6678/workspace/UCOSII_Double/lib/include/string.h: 
 H:/c6678/workspace/UCOSII_Double/lib/include/rb_tree.h: 
@@ -51,7 +70,6 @@ H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_corepac.h:
 H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_sysirq.h: 
 H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_debug.h: 
 H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/stdio.h: 
-H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_exception.h: 
 H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_init.h: 
 H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_ipc.h: 
 H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_itbl.h: 
@@ -59,5 +77,5 @@ H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_memarea.h:
 H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_mpu.h: 
 H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_msmc.h: 
 H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_rpc.h: 
-H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_spinlock.h: 
-H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_timer.h: 
+H:/c6678/workspace/UCOSII_Double/arch/driver/include/c66xx_spinlock.h: 
+H:/c6678/workspace/UCOSII_Double/arch/driver/include/c66xx_timer.h: 

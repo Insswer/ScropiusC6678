@@ -1,7 +1,7 @@
 # FIXED
 
 arch/driver/c66xx_timer.obj: ../arch/driver/c66xx_timer.c
-arch/driver/c66xx_timer.obj: H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_timer.h
+arch/driver/c66xx_timer.obj: H:/c6678/workspace/UCOSII_Double/arch/driver/include/c66xx_timer.h
 arch/driver/c66xx_timer.obj: H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_io.h
 arch/driver/c66xx_timer.obj: H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/stdio.h
 arch/driver/c66xx_timer.obj: H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/linkage.h
@@ -17,7 +17,7 @@ arch/driver/c66xx_timer.obj: H:/c6678/workspace/UCOSII_Double/arch/include/c66xx
 arch/driver/c66xx_timer.obj: H:/c6678/workspace/UCOSII_Double/lib/include/list.h
 
 ../arch/driver/c66xx_timer.c: 
-H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_timer.h: 
+H:/c6678/workspace/UCOSII_Double/arch/driver/include/c66xx_timer.h: 
 H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_io.h: 
 H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/stdio.h: 
 H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/linkage.h: 

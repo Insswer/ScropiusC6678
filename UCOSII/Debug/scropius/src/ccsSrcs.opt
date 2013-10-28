@@ -1,1 +1,1 @@
-"../scropius/src/main.c" "../scropius/src/sc_int.c" 
+"../scropius/src/main.c" "../scropius/src/sc_int.c" "../scropius/src/sc_os.c" 

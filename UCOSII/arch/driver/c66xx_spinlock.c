@@ -178,7 +178,7 @@ void BSP_ClearAllSpinlock(void)
  */
 int BSP_GetSpinlockIrqSaved(int id)
 {
-	BSP_DisableIntIrqSave();
+	BSP_DisableInt();
 	return SpinLock(id);
 }
 
@@ -193,6 +193,6 @@ int BSP_GetSpinlockIrqSaved(int id)
  */
 int BSP_ReleaseSpinlockIrqRestore(int id)
 {
-	BSP_EnableIntIrqRestore();
+	BSP_EnableInt();
 	return SpinUnlock(id);
 }

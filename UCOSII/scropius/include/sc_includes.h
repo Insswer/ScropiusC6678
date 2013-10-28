@@ -2,6 +2,10 @@
 #ifndef _SCROPIUS_INCLUDES_H__
 #define _SCROPIUS_INCLUDES_H__
 
+#include "scropius_cfg.h"
+#include "sc_int.h"
+#include "sc_os.h"
+
 #ifdef CCS5
 
 #include <stdio.h>

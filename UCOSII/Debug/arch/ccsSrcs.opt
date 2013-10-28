@@ -1,1 +1,1 @@
-"../arch/c6678_cache.c" "../arch/c66xx_cic.c" "../arch/c66xx_corepac.c" "../arch/c66xx_exception.c" "../arch/c66xx_init.c" "../arch/c66xx_ipc.c" "../arch/c66xx_memarea.c" "../arch/c66xx_mpu.c" "../arch/c66xx_msmc.c" "../arch/c66xx_regs.asm" "../arch/c66xx_rpc.c" 
+"../arch/c6678_cache.c" "../arch/c66xx_cic.c" "../arch/c66xx_corepac.c" "../arch/c66xx_exception.c" "../arch/c66xx_init.c" "../arch/c66xx_ipc.c" "../arch/c66xx_memarea.c" "../arch/c66xx_mpu.c" "../arch/c66xx_msmc.c" "../arch/c66xx_regs.asm" "../arch/c66xx_rpc.c" "../arch/c66xx_vectors.asm" 

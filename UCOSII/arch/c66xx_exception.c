@@ -115,6 +115,6 @@ void BSP_IsrHandlerEntry(unsigned int vectorNum)
 {
 	int core = BSP_GetCoreId();
 	BSP_ClearDspInterrupt(vectorNum);
-	if (!Scropius_ISRHandlerEntry(core, vectorNum))
+	if (Scropius_ISRHandlerEntry(core, vectorNum))
 		BSP_OtherHandlerEntry(core, vectorNum);
 }

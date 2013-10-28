@@ -1,1 +1,1 @@
-"../ucos/port/c66xx_itbl.asm" "../ucos/port/c66xx_vectors.asm" "../ucos/port/os_cpu_a.asm" "../ucos/port/os_cpu_c.c" "../ucos/port/os_irqhandler.c" 
+"../ucos/port/os_cpu_a.asm" "../ucos/port/os_cpu_c.c" "../ucos/port/os_inc_vector.asm" "../ucos/port/os_irqhandler.c" 

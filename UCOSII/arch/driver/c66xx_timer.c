@@ -85,7 +85,7 @@ void BSP_TimeInterruptISR(void)
  * @param[out]	无。
  * @returns:	无。
  */
-void InitTimer(struct C6xTimerDev *pTimer)
+void InitTimer(struct C6xTimerDev *pTimer, int timer_int)
 {
 	struct CorepacIntDev *corepac_int_dev;
 	unsigned long tmp;
@@ -144,8 +144,7 @@ void InitTimer(struct C6xTimerDev *pTimer)
 	tmp |= (0x2 << 6);
 	writel(tmp, TIMER_TCR_REG(pTimer->id));
 	corepac_int_dev = BSP_GetCurCorepacIntc();
-	corepac_int_dev->pFunc_sets->corepac_map_dsp_int(IRQ_TINT, 14);
-	BSP_EnableDspInterrupt(14);
+	corepac_int_dev->pFunc_sets->corepac_map_dsp_int(IRQ_TINT, timer_int);
 
 	DEBUG_DEV("timer%d starts...\n", pTimer->id);
 
@@ -204,7 +203,7 @@ int AckTimerInt(struct C6xTimerDev *pTimer)
  * @returns:	struct C6xTimerDev *：定时器实例的指针。
  *
  */
-struct C6xTimerDev *BSP_InitC6xTimer(unsigned int num)
+struct C6xTimerDev *BSP_InitC6xTimer(unsigned int num, unsigned int timer_int)
 {
 	if (num > 15) {
 		DEBUG_DEV("bad num..\n");
@@ -214,11 +213,11 @@ struct C6xTimerDev *BSP_InitC6xTimer(unsigned int num)
 	pTimer_dev->id = num;
 
 	if (pTimer_dev->init_timer != NULL)
-		pTimer_dev->init_timer(pTimer_dev);
+		pTimer_dev->init_timer(pTimer_dev, timer_int);
 	else {
 		pTimer_dev->init_timer = InitTimer;
 		pTimer_dev->ack_timer_int = AckTimerInt;
-		pTimer_dev->init_timer(pTimer_dev);
+		pTimer_dev->init_timer(pTimer_dev, timer_int);
 	}
 	return pTimer_dev;
 }

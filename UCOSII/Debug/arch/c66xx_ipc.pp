@@ -13,7 +13,7 @@ arch/c66xx_ipc.obj: H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_sysirq.h
 arch/c66xx_ipc.obj: H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_cache.h
 arch/c66xx_ipc.obj: H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_perm.h
 arch/c66xx_ipc.obj: H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_itbl.h
-arch/c66xx_ipc.obj: H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_spinlock.h
+arch/c66xx_ipc.obj: H:/c6678/workspace/UCOSII_Double/arch/driver/include/c66xx_spinlock.h
 arch/c66xx_ipc.obj: H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/stdio.h
 arch/c66xx_ipc.obj: H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_debug.h
 arch/c66xx_ipc.obj: H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/stdio.h
@@ -36,7 +36,7 @@ H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_sysirq.h:
 H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_cache.h: 
 H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_perm.h: 
 H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_itbl.h: 
-H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_spinlock.h: 
+H:/c6678/workspace/UCOSII_Double/arch/driver/include/c66xx_spinlock.h: 
 H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/stdio.h: 
 H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_debug.h: 
 H:/c6678/ccs/ccsv5/tools/compiler/c6000/include/stdio.h: 

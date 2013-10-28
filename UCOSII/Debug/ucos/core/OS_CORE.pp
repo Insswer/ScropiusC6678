@@ -37,8 +37,8 @@ ucos/core/OS_CORE.obj: H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_msmc.
 ucos/core/OS_CORE.obj: H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_rpc.h
 ucos/core/OS_CORE.obj: H:/c6678/workspace/UCOSII_Double/lib/include/parcel.h
 ucos/core/OS_CORE.obj: H:/c6678/workspace/UCOSII_Double/lib/include/string.h
-ucos/core/OS_CORE.obj: H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_spinlock.h
-ucos/core/OS_CORE.obj: H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_timer.h
+ucos/core/OS_CORE.obj: H:/c6678/workspace/UCOSII_Double/arch/driver/include/c66xx_spinlock.h
+ucos/core/OS_CORE.obj: H:/c6678/workspace/UCOSII_Double/arch/driver/include/c66xx_timer.h
 
 ../ucos/core/OS_CORE.C: 
 H:/c6678/workspace/UCOSII_Double/ucos/include_uc/includes.h: 
@@ -77,5 +77,5 @@ H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_msmc.h:
 H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_rpc.h: 
 H:/c6678/workspace/UCOSII_Double/lib/include/parcel.h: 
 H:/c6678/workspace/UCOSII_Double/lib/include/string.h: 
-H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_spinlock.h: 
-H:/c6678/workspace/UCOSII_Double/arch/include/c66xx_timer.h: 
+H:/c6678/workspace/UCOSII_Double/arch/driver/include/c66xx_spinlock.h: 
+H:/c6678/workspace/UCOSII_Double/arch/driver/include/c66xx_timer.h: 

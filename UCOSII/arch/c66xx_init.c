@@ -37,17 +37,10 @@ void BSP_ArchInit(void)
 {
 	struct cic_device *pCic_dev0;
 	struct cic_device *pCic_dev1;
-	int core_num;
-
-	core_num = BSP_GetCoreId();
 
 	BSP_DisableL2Cache();
 	BSP_InitCic();
 	BSP_InitCurCorepac();
-	BSP_InitializeIntCtr();
-	BSP_InitializeVector();
-
-
 	set_all_memory_non_cachable();
 
 	pCic_dev0 = BSP_GetCicChip(0);
@@ -56,10 +49,10 @@ void BSP_ArchInit(void)
 	pCic_dev1->cic_global_enable_interrupt(pCic_dev1);
 
 
-	BSP_InitIPCModule(13);
+//	BSP_InitIPCModule(13);
 	BSP_ClearAllSpinlock();
 
-	BSP_InitC6xTimer(core_num);
+//	BSP_InitC6xTimer(core_num);
 //	BSP_EnableInt();
 
 	if (BSP_GetExecutionState())

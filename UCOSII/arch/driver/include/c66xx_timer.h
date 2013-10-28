@@ -29,7 +29,7 @@
 
 /**************************** 声明部分 *********************************/
 
-struct C6xTimerDev *BSP_InitC6xTimer(unsigned int num);
+struct C6xTimerDev *BSP_InitC6xTimer(unsigned int num, unsigned int timer_int);
 struct C6xTimerDev *BSP_GetC6xTimer(unsigned int num);
 void BSP_TimeInterruptISR(void);
 
@@ -94,7 +94,7 @@ struct C6xTimerDev {
 	int mode;
 	int init_ready;
 	unsigned long reload_value;
-	void (*init_timer)(struct C6xTimerDev *);
+	void (*init_timer)(struct C6xTimerDev *, int);
 	int (*ack_timer_int)(struct C6xTimerDev *);
 };
 

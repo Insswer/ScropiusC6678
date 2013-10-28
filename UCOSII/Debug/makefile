@@ -6,6 +6,7 @@ SHELL = cmd.exe
 
 ORDERED_OBJS += \
 $(GEN_CMDS__FLAG) \
+"./arch/c66xx_vectors.obj" \
 "./arch/c66xx_rpc.obj" \
 "./arch/c66xx_regs.obj" \
 "./arch/c66xx_msmc.obj" \
@@ -21,6 +22,7 @@ $(GEN_CMDS__FLAG) \
 "./arch/driver/c66xx_spinlock.obj" \
 "./lib/string.obj" \
 "./lib/rb_tree.obj" \
+"./scropius/src/sc_os.obj" \
 "./scropius/src/sc_int.obj" \
 "./scropius/src/main.obj" \
 "./ucos/core/OS_TIME.obj" \
@@ -33,10 +35,9 @@ $(GEN_CMDS__FLAG) \
 "./ucos/core/OS_FLAG.obj" \
 "./ucos/core/OS_CORE.obj" \
 "./ucos/port/os_irqhandler.obj" \
+"./ucos/port/os_inc_vector.obj" \
 "./ucos/port/os_cpu_c.obj" \
 "./ucos/port/os_cpu_a.obj" \
-"./ucos/port/c66xx_vectors.obj" \
-"./ucos/port/c66xx_itbl.obj" \
 "./ucos/ucmain.obj" \
 -l"libc.a" \
 "../main.cmd" \
@@ -148,10 +149,10 @@ UCOSII_Double.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(C6000_EXECUTABLE_OUTPUTS__QUOTED) "UCOSII_Double.out"
-	-$(RM) "ucos\port\c66xx_itbl.pp" "ucos\port\c66xx_vectors.pp" "ucos\port\os_cpu_a.pp" "arch\c66xx_regs.pp" 
-	-$(RM) "ucos\ucmain.pp" "ucos\port\os_cpu_c.pp" "ucos\port\os_irqhandler.pp" "scropius\src\main.pp" "scropius\src\sc_int.pp" "lib\rb_tree.pp" "lib\string.pp" "arch\driver\c66xx_spinlock.pp" "arch\driver\c66xx_timer.pp" "arch\c6678_cache.pp" "arch\c66xx_cic.pp" "arch\c66xx_corepac.pp" "arch\c66xx_exception.pp" "arch\c66xx_init.pp" "arch\c66xx_ipc.pp" "arch\c66xx_memarea.pp" "arch\c66xx_mpu.pp" "arch\c66xx_msmc.pp" "arch\c66xx_rpc.pp" 
+	-$(RM) "ucos\port\os_cpu_a.pp" "ucos\port\os_inc_vector.pp" "arch\c66xx_regs.pp" "arch\c66xx_vectors.pp" 
+	-$(RM) "ucos\ucmain.pp" "ucos\port\os_cpu_c.pp" "ucos\port\os_irqhandler.pp" "scropius\src\main.pp" "scropius\src\sc_int.pp" "scropius\src\sc_os.pp" "lib\rb_tree.pp" "lib\string.pp" "arch\driver\c66xx_spinlock.pp" "arch\driver\c66xx_timer.pp" "arch\c6678_cache.pp" "arch\c66xx_cic.pp" "arch\c66xx_corepac.pp" "arch\c66xx_exception.pp" "arch\c66xx_init.pp" "arch\c66xx_ipc.pp" "arch\c66xx_memarea.pp" "arch\c66xx_mpu.pp" "arch\c66xx_msmc.pp" "arch\c66xx_rpc.pp" 
 	-$(RM) "ucos\core\OS_CORE.pp" "ucos\core\OS_FLAG.pp" "ucos\core\OS_MBOX.pp" "ucos\core\OS_MEM.pp" "ucos\core\OS_MUTEX.pp" "ucos\core\OS_Q.pp" "ucos\core\OS_SEM.pp" "ucos\core\OS_TASK.pp" "ucos\core\OS_TIME.pp" 
-	-$(RM) "ucos\ucmain.obj" "ucos\port\c66xx_itbl.obj" "ucos\port\c66xx_vectors.obj" "ucos\port\os_cpu_a.obj" "ucos\port\os_cpu_c.obj" "ucos\port\os_irqhandler.obj" "ucos\core\OS_CORE.obj" "ucos\core\OS_FLAG.obj" "ucos\core\OS_MBOX.obj" "ucos\core\OS_MEM.obj" "ucos\core\OS_MUTEX.obj" "ucos\core\OS_Q.obj" "ucos\core\OS_SEM.obj" "ucos\core\OS_TASK.obj" "ucos\core\OS_TIME.obj" "scropius\src\main.obj" "scropius\src\sc_int.obj" "lib\rb_tree.obj" "lib\string.obj" "arch\driver\c66xx_spinlock.obj" "arch\driver\c66xx_timer.obj" "arch\c6678_cache.obj" "arch\c66xx_cic.obj" "arch\c66xx_corepac.obj" "arch\c66xx_exception.obj" "arch\c66xx_init.obj" "arch\c66xx_ipc.obj" "arch\c66xx_memarea.obj" "arch\c66xx_mpu.obj" "arch\c66xx_msmc.obj" "arch\c66xx_regs.obj" "arch\c66xx_rpc.obj" 
+	-$(RM) "ucos\ucmain.obj" "ucos\port\os_cpu_a.obj" "ucos\port\os_cpu_c.obj" "ucos\port\os_inc_vector.obj" "ucos\port\os_irqhandler.obj" "ucos\core\OS_CORE.obj" "ucos\core\OS_FLAG.obj" "ucos\core\OS_MBOX.obj" "ucos\core\OS_MEM.obj" "ucos\core\OS_MUTEX.obj" "ucos\core\OS_Q.obj" "ucos\core\OS_SEM.obj" "ucos\core\OS_TASK.obj" "ucos\core\OS_TIME.obj" "scropius\src\main.obj" "scropius\src\sc_int.obj" "scropius\src\sc_os.obj" "lib\rb_tree.obj" "lib\string.obj" "arch\driver\c66xx_spinlock.obj" "arch\driver\c66xx_timer.obj" "arch\c6678_cache.obj" "arch\c66xx_cic.obj" "arch\c66xx_corepac.obj" "arch\c66xx_exception.obj" "arch\c66xx_init.obj" "arch\c66xx_ipc.obj" "arch\c66xx_memarea.obj" "arch\c66xx_mpu.obj" "arch\c66xx_msmc.obj" "arch\c66xx_regs.obj" "arch\c66xx_rpc.obj" "arch\c66xx_vectors.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
