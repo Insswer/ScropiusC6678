@@ -20,14 +20,14 @@ MEMORY
 }
 SECTIONS
 {
-	.text:vecs 	> DDR_SHARED
-	.text 		> DDR_SHARED	
-	.data 		> DDR_SHARED
+	.text:vecs 	> L2_SHARED
+	.text 		> L2_SHARED	
+	.data 		> L2_SHARED
 	.stack		> L2_SHARED
-	.bss 		> DDR_SHARED
+	.bss 		> L2_SHARED
 	.sysmem 	> DDR_SHARED
-	.cinit 		> DDR_SHARED
+	.cinit 		> L2_SHARED
 	.cio		> L2_SHARED
-	.const 		> DDR_SHARED
-	.far 		> DDR_SHARED
+	.const 		> L2_SHARED
+	.far 		> L2_SHARED
 }

@@ -17,6 +17,7 @@
 
 #define STK_SIZE     1024
 #define START_STK_SIZE   1024
+#define UC_OS_NUM	2
 
 OS_STK  TASK1_STK[STK_SIZE];
 OS_STK  TASK0_STK[STK_SIZE];
@@ -28,8 +29,12 @@ void Task1(void *pdata);
 
 int sys_tick_handler(int core, unsigned int vect);
 
+static int os_num;
+
+
 int ucmain(int onum)
 {
+	os_num = onum;
 	sc_request_irq(sys_tick_handler, BSP_GetCoreId(), 14);
 	OSInit();
 	OSTaskCreate(TaskStart,	//task pointer
@@ -51,7 +56,7 @@ void TaskStart(void * pdata)
 	 while(1)
 	 {
 		 printf("\nEnter Main Task\n");
-		 OSTimeDly(5);
+		 OSTimeDly(10);
 	 }
 
 }
@@ -62,7 +67,7 @@ void Task0(void *pdata)
 	while(1)
 	{
 		printf("Hello from UCOSII task0 \n");
-		OSTimeDly(5);
+		OSTimeDly(3);
 	}
 }
 
